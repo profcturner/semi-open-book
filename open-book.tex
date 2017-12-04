@@ -1,0 +1,49 @@
+\documentclass[12pt,a4paper]{minimal}
+\usepackage[latin1]{inputenc}
+\usepackage{pst-barcode}
+\usepackage[margin=2cm]{geometry}
+
+
+%
+% Does it all have to be Arial now? <sigh>
+%
+\renewcommand{\familydefault}{\sfdefault}
+
+\author{Professor Colin Turner}
+\begin{document}
+\begin{centering}
+\textbf{EEE122 Examination Guide Sheet}
+
+This sheet, and its contents that you have added, can be brought into
+the examination for EEE122. The contents \textbf{must} be compiled
+by yourself, be handwritten, and be original (i.e. \textbf{NOT} 
+photocopied or similar). You may use the
+reverse side. You may retain a copy you have made before the examination
+but the original must be handed in with your examination scripts at the
+end of your examination.
+
+%\input{open-book-insert-name.tex}
+% D'Oh! Not supposed to put a name on anything going in the exam.
+\input{open-book-insert-barcode.tex}
+\hfill
+\begin{pspicture}(7,1in)
+%\psbarcode{
+%\input{./open_book_insert.tex}
+%B00526636
+%}{includetext height=0.25}{code39}
+\input{open-book-insert-barcode.tex}
+\end{pspicture}
+\end{centering}
+
+\vfill
+\begin{centering}
+Please read the following declaration and tick the box to indicate you agree:
+
+I declare this sheet to have been compiled by myself and not by another, and that the student number above is mine.
+
+%\rule[-1 cm]{10 cm}{1 pt}
+\framebox[0.3 cm]{ }
+
+\end{centering}
+
+\end{document}
