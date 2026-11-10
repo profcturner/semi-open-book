@@ -99,3 +99,10 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# semi-open-book outputs and student data
+sheets/
+*.csv
+*.aux
+*.log
+open-book-settings.tex
