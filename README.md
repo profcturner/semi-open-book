@@ -25,6 +25,7 @@ these are needed any more.
   in the same folder as `open-book.py`
 * `open-book.tex`: the LaTeX template for the sheet. Edit the wording here.
   `\ModuleCode` and `\StudentNumber` are filled in for each student.
+* `open-book-reportlab.py`: an alternative that does not need LaTeX (see below)
 
 ## The CSV file
 
@@ -60,6 +61,26 @@ environment variable):
         --email-sender me@example.ac.uk --email-body-file message.txt
 
 Run `python open-book.py --help` for all the options.
+
+## Without LaTeX: open-book-reportlab.py
+
+`open-book-reportlab.py` takes the same options but needs no TeX
+installation, just two Python packages:
+
+    pip install -r requirements.txt
+
+By default it draws the same sheet as the LaTeX version, with the wording
+set near the top of the script:
+
+    python open-book-reportlab.py -b -t -m EEE122 --barcode
+
+Alternatively, design the sheet however you like (for example in Word),
+save it as a one-page PDF, and the script will stamp each student's number,
+and barcode if asked, onto a copy of it. `--stamp-top` and `--stamp-right` set
+the position in millimetres from the top-right corner (default 20 each):
+
+    python open-book-reportlab.py -b -t -m EEE122 --barcode \
+        --template-pdf EEE122-sheet.pdf --stamp-top 30
 
 If a sheet cannot be made, the script reports the end of the LaTeX log for
 that student, carries on with the others, lists the failures at the end and
